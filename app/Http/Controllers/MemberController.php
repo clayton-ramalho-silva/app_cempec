@@ -29,8 +29,38 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        dd($input);
+
+       $member = new Member;
+
+       $member->name = $request->name;
+       $member->data_nascimento = $request->data_nascimento;
+       $member->cpf = $request->cpf;
+       $member->email = $request->email;
+       $member->telefone_fixo = $request->telefone_fixo;
+       $member->celular = $request->celular;
+       $member->endereco = $request->endereco;
+       $member->cidade = $request->cidade;
+       $member->estado = $request->estado;
+       $member->cep = $request->cep;
+       $member->cargo = $request->cargo;
+       $member->departamentos = $request->departamentos;
+       $member->data_membresia = $request->data_membresia;
+
+       // upload foto
+       if($request->hasFile('foto_perfil') && $request->file('foto_perfil')->isValid()){
+        $requestImage = $request->foto_perfil;
+        $extension = $requestImage->extension();
+        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+        $requestImage->move(public_path('img/members'), $imageName);
+
+        $member->foto_perfil = $imageName;
+
+       }
+       $member->save();
+
+       dd('Salvo');
+
+
     }
 
     /**

@@ -53,7 +53,7 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="telefone">Telefone Fixo</label>
-                                                            <input type="text" class="form-control mb-4" name="telefone-fixo" id="telefone-fixo" placeholder="">
+                                                            <input type="text" class="form-control mb-4" name="telefone_fixo" id="telefone-fixo" placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
@@ -147,8 +147,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="departamento">Participa algum Ministério/Departamento?</label>
-                                                <select name="departamento" class="form-control selectpicker" multiple>
-                                                    <option selected>Ministério/Departamento</option>
+                                                <select name="departamentos[]" class="form-control selectpicker" multiple>
                                                     <option value="louvor">Ministério Louvor</option>
                                                     <option value="sal_da_terra">Sal da Terra</option>
                                                     <option value="luz_do_mundo">Luz do Mundo</option>
@@ -163,7 +162,7 @@
                                             <label class="dob-input">Data de Membresia</label>
                                             <div class="d-sm-flex d-block">
                                                 <div class="form-group mr-1">
-                                                    <input type="date" name="data_nascimento" id="" class="form-control">
+                                                    <input type="date" name="data_membresia" id="" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
