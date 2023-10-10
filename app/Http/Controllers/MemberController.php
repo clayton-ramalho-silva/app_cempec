@@ -29,7 +29,8 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        dd('chegou aqui');
+        $input = $request->all();
+        dd($input);
     }
 
     /**
