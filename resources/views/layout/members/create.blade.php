@@ -140,7 +140,8 @@
                                                     <option value="evengelista">Evangelista</option>
                                                     <option value="diacono">Diácono/Diaconisa</option>
                                                     <option value="obreiro">Obreiro/Obreira</option>
-                                                    <option value="voluntario">Voluntário</option>
+                                                    <option value="membro">Membro</option>
+
                                                 </select>
                                             </div>
                                         </div>
