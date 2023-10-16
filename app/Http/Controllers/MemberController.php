@@ -13,7 +13,9 @@ class MemberController extends Controller
      */
     public function index(): View
     {
-        return view('layout.members.index');
+        $members = Member::all();
+
+        return view('layout.members.index', compact('members'));
     }
 
     /**
@@ -58,7 +60,7 @@ class MemberController extends Controller
        }
        $member->save();
 
-       dd('Salvo');
+       return redirect()->route('members.index');
 
 
     }
@@ -66,9 +68,9 @@ class MemberController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Member $member)
+    public function show(Member $member): View
     {
-        //
+        return view('layout.members.show');
     }
 
     /**

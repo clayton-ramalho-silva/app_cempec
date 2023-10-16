@@ -176,14 +176,14 @@ code {
 .layout-px-spacing {
   padding: 0 39px !important; }
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
 */
 .header-container {
   max-height: 64px;
-  background: #31113a;
+  background: #52006a;
   position: fixed;
   top: 0;
   right: 0;
@@ -892,7 +892,7 @@ code {
 /*
     ====================
         More Dropdown
-    ====================    
+    ====================
 */
 /*
     Footer

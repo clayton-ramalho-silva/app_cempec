@@ -17,12 +17,12 @@
   position: unset; }
 
 .new-control.new-checkbox span.new-control-indicator:after {
-  top: 51%; 
+  top: 51%;
 width: 100vw;
 
 }
 
-  
+
 
 /*
   Filtered List Search
@@ -337,7 +337,8 @@ width: 100vw;
   .searchable-container .searchable-items.grid .items .user-email {
     display: flex;
     justify-content: space-between;
-    margin-top: 24px; }
+    margin-top: 24px;
+}
     .searchable-container .searchable-items.grid .items .user-email .info-title {
       font-size: 14px;
       font-weight: 600;
@@ -424,3 +425,5 @@ width: 100vw;
     max-width: 100%; }
   .filtered-list-search form > div {
     width: 100%; } }
+
+

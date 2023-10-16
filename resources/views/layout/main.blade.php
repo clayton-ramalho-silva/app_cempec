@@ -19,15 +19,15 @@
 
     <!--  BEGIN NAVBAR  -->
     <div class="header-container">
-        <header class="header navbar navbar-expand-sm">
+        <header class="header navbar navbar-expand-sm justify-content-between">
 
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="index.html"><img alt="logo" src="assets/img/90x90.jpg"> <span class="navbar-brand-name">CORK</span></a>
+                <a class="navbar-brand" href="{{ route('members.index') }}"><img alt="logo" src="{{ asset('assets/img/logo-branco.png')}}"> <span class="navbar-brand-name">CEMPEC</span></a>
             </div>
 
-            <ul class="navbar-item flex-row mr-auto">
+            {{-- <ul class="navbar-item flex-row mr-auto">
                 <li class="nav-item align-self-center search-animated">
                     <form class="form-inline search-full form-inline search" role="search">
                         <div class="search-bar">
@@ -36,10 +36,10 @@
                     </form>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </li>
-            </ul>
+            </ul> --}}
 
             <ul class="navbar-item flex-row nav-dropdowns">
-                <li class="nav-item dropdown language-dropdown more-dropdown">
+                {{-- <li class="nav-item dropdown language-dropdown more-dropdown">
                     <div class="dropdown custom-dropdown-icon">
                         <a class="dropdown-toggle btn" href="#" role="button" id="customDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/flag-ca.svg" class="flag-width" alt="flag"><span>English</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
 
@@ -50,7 +50,7 @@
                             <a class="dropdown-item" data-img-value="flag-ca" data-value="English" href="javascript:void(0);"><img src="assets/img/flag-ca.svg" class="flag-width" alt="flag"> English</a>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="nav-item dropdown message-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -242,12 +242,12 @@
             <nav id="topbar">
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
-                        <a href="index.html">
-                            <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                        <a href="{{ route('members.index') }}">
+                            <img src="{{asset('assets/img/logo-preto.png') }}" class="navbar-logo" alt="logo">
                         </a>
                     </li>
                     <li class="nav-item theme-text">
-                        <a href="index.html" class="nav-link"> CORK </a>
+                        <a href="index.html" class="nav-link"> CEMPEC </a>
                     </li>
                 </ul>
 
@@ -272,53 +272,12 @@
                     </li>
 
                     <li class="menu single-menu active">
-                        <a href="#app" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                        <a href="{{ route('members.index') }}" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cpu"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                                <span>Apps</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <span>Membros</span>
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="app" data-parent="#topAccordion">
-                            <li>
-                                <a href="apps_chat.html"> Chat </a>
-                            </li>
-                            <li>
-                                <a href="apps_mailbox.html"> Mailbox </a>
-                            </li>
-                            <li>
-                                <a href="apps_todoList.html"> Todo List </a>
-                            </li>
-                            <li>
-                                <a href="apps_notes.html">Notes</a>
-                            </li>
-                            <li>
-                                <a href="apps_scrumboard.html">Task Board</a>
-                            </li>
-                            <li class="active">
-                                <a href="apps_contacts.html">Contacts</a>
-                            </li>
-                            <li class="sub-sub-submenu-list">
-                                <a href="#appInvoice" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Invoice <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> </a>
-                                <ul class="collapse list-unstyled sub-submenu" id="appInvoice" data-parent="#app">
-                                    <li>
-                                        <a href="apps_invoice-list.html"> List </a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_invoice-preview.html"> Preview </a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_invoice-add.html"> Add </a>
-                                    </li>
-                                    <li>
-                                        <a href="apps_invoice-edit.html"> Edit </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="apps_calendar.html"> Calendar</a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="menu single-menu">
