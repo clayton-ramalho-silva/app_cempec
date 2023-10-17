@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('members', MemberController::class)
-    ->only(['index', 'store', 'create', 'show'])
+    ->only(['index', 'store', 'create', 'show', 'destroy', 'update', 'edit'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

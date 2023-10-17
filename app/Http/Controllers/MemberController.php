@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Member;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\View\View;
 
 class MemberController extends Controller
@@ -72,15 +73,16 @@ class MemberController extends Controller
      */
     public function show(Member $member): View
     {
-        return view('layout.members.show');
+
+        return view('layout.members.show', ['member' => $member]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Member $member)
+    public function edit(Member $member): View
     {
-        //
+        return view('layout.members.edit',['member' => $member]);
     }
 
     /**
@@ -88,7 +90,32 @@ class MemberController extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        //
+        $data = $request->all();
+
+        $imagem_atual = $member->foto_perfil;
+
+
+
+        // upload foto
+       if($request->hasFile('foto_perfil') && $request->file('foto_perfil')->isValid()){
+            $requestImage = $request->foto_perfil;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+            $requestImage->move(public_path('img/members'), $imageName);
+
+            $data['foto_perfil'] = $imageName;
+
+            if($imagem_atual){
+                unlink(public_path('img/members/'.$imagem_atual));
+
+            }
+       }
+
+       Member::findOrFail($member->id)->update($data);
+
+
+       return redirect()->route('members.index');
+
     }
 
     /**
@@ -96,6 +123,8 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+
+        return redirect()->route('members.index');
     }
 }
