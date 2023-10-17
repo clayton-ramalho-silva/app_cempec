@@ -48,6 +48,9 @@
                                     @case('obreiro')
                                         Obreiro / Obreira
                                         @break
+                                    @case('membro')
+                                        Membro
+                                        @break
                                     @default
 
                                 @endswitch

@@ -17,7 +17,7 @@
                                     <div class="row">
                                         <div class="col-xl-2 col-lg-12 col-md-4">
                                             <div class="upload mt-4 pr-md-4">
-                                                <input name="foto_perfil" type="file" id="input-file-max-fs" class="dropify" data-default-file="assets/img/200x200.jpg" data-max-file-size="2M" />
+                                                <input name="foto_perfil" type="file" id="input-file-max-fs" class="dropify" data-default-file="{{asset('assets/img/200x200.jpg')}}" data-max-file-size="2M" />
                                                 <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Foto</p>
                                             </div>
                                         </div>
