@@ -36,3 +36,5 @@ Route::resource('members', MemberController::class)
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
+
+//teste auto deploy git
