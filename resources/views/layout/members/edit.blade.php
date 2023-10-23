@@ -21,6 +21,7 @@
                                             <div class="upload mt-4 pr-md-4">
                                                 <input name="foto_perfil" type="file" id="input-file-max-fs" class="dropify" data-default-file="{{ asset('img/members/'.$member->foto_perfil) }}" data-max-file-size="2M" />
                                                 <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i> Upload Foto</p>
+                                                @error('foto_perfil') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                             </div>
                                         </div>
                                         <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
@@ -30,6 +31,7 @@
                                                         <div class="form-group">
                                                             <label for="name">Nome completo</label>
                                                             <input name="name" type="text" class="form-control mb-4" id="name" value="{{ $member->name }}">
+                                                            @error('name') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
@@ -37,6 +39,7 @@
                                                         <div class="d-sm-flex d-block">
                                                             <div class="form-group mr-1">
                                                                 <input type="date" name="data_nascimento" id="" class="form-control" value="{{ $member->data_nascimento  }}">
+                                                                @error('data_nascimento') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                             </div>
                                                         </div>
                                                     </div>
@@ -44,35 +47,41 @@
                                                         <div class="form-group">
                                                             <label for="cpf">CPF</label>
                                                             <input name="cpf" type="text" class="form-control mb-4" id="cpf" value="{{ $member->cpf }}" required>
+                                                            @error('cpf') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="email">E-mail</label>
                                                             <input name="email" type="text" class="form-control mb-4" id="email" value="{{ $member->email }}">
+                                                            @error('email') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="telefone">Telefone Fixo</label>
                                                             <input type="text" class="form-control mb-4" name="telefone_fixo" id="telefone-fixo" value="{{ $member->telefone_fixo }}">
+                                                            @error('telefone_fixo') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="celular">Celular/WhatsApp</label>
                                                             <input type="text" class="form-control mb-4" name="celular" id="celular" value="{{ $member->celular }}">
+                                                            @error('celular') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group mb-4">
                                                             <label for="inputAddress">Endereço</label>
                                                             <input type="text" class="form-control" name="endereco" id="inputAddress" value="{{ $member->endereco }}">
+                                                            @error('endereco') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                         </div>
                                                         <div class="form-row mb-4">
                                                             <div class="form-group col-md-6">
                                                                 <label for="inputCity">Cidade</label>
                                                                 <input type="text" class="form-control" name="cidade" id="inputCity" value="{{ $member->cidade }}">
+                                                                @error('cidade') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                             </div>
                                                             <div class="form-group col-md-4">
                                                                 <label for="inputState">Estado</label>
@@ -105,10 +114,12 @@
                                                                     <option value="SE" {{ $member->estado == 'SE' ? 'selected' : '' }} >SE</option>
                                                                     <option value="TO" {{ $member->estado == 'TO' ? 'selected' : '' }} >TO</option>
                                                                 </select>
+                                                                @error('estado') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                             </div>
                                                             <div class="form-group col-md-2">
                                                                 <label for="cep">CEP</label>
                                                                 <input type="text" class="form-control" name="cep" id="cep" value="{{ $member->cep }}">
+                                                                @error('cep') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                             </div>
                                                         </div>
                                                     </div>
@@ -146,6 +157,7 @@
                                                     <option value="membro" {{$member->cargo == 'membro'? 'selected' : ''}} >Membro</option>
 
                                                 </select>
+                                                @error('foto_perfil') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                             </div>
                                         </div>
 
@@ -191,6 +203,7 @@
 
 
                                                 </select>
+                                                @error('foto_perfil') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                             </div>
                                         </div>
 
@@ -205,6 +218,7 @@
                                                     <option value="secretaria" {{$member->cargo_admin == 'secretaria'? 'selected' : ''}} >Secretária</option>
                                                     <option value="tesoureiro" {{$member->cargo_admin == 'tesoureiro'? 'selected' : ''}} >Tesoureiro</option>
                                                 </select>
+                                                @error('foto_perfil') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                             </div>
                                         </div>
 
@@ -214,6 +228,7 @@
                                             <div class="d-sm-flex d-block">
                                                 <div class="form-group mr-1">
                                                     <input type="date" name="data_membresia" id="" class="form-control" value="{{ $member->data_membresia }}">
+                                                    @error('foto_perfil') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                 </div>
                                             </div>
                                         </div>

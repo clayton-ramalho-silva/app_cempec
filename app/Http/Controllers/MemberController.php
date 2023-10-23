@@ -35,6 +35,32 @@ class MemberController extends Controller
     public function store(Request $request)
     {
 
+
+        $request->validate([
+            'name' => 'required|string|max:50',
+            'data_nascimento' => 'date',
+            'cpf' => 'required|string|unique:members,cpf',
+            'email' => 'email',
+            'telefone_fixo' => 'string|max:20',
+            'celular' => 'string|max:20',
+            'endereco' => 'string|max:100',
+            'cidade' => 'string|max:50',
+            'estado' => 'string|max:10',
+            'cep' =>'string|max:10',
+            'cargo' => 'string|max:20',
+            'departamentos' => 'string|max:50',
+            'cargo_admin' => 'string|max:50',
+            'data_membresia' => 'date',
+            'foto_perfil' => 'file|image:jpg,jpeg,png',
+        ],[
+            'name.required' => 'O nome é obrigatório',
+            'name.max' => 'O nome deveter no máximo 50 caracteres',
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'O CPF deve ser único',
+            'email' => 'O email deve ser válido ex: example@email.com.br',
+
+        ]);
+
        $member = new Member;
 
        $member->name = $request->name;
@@ -49,7 +75,7 @@ class MemberController extends Controller
        $member->cep = $request->cep;
        $member->cargo = $request->cargo;
        $member->departamentos = $request->departamentos;
-       $member->cargo_adm = $request->cargo_admin;
+       $member->cargo_admin = $request->cargo_admin;
        $member->data_membresia = $request->data_membresia;
 
        // upload foto
@@ -91,6 +117,32 @@ class MemberController extends Controller
      */
     public function update(Request $request, Member $member)
     {
+
+        $request->validate([
+            'name' => 'required|string|max:50',
+            'data_nascimento' => 'date',
+            'cpf' => 'required|string|unique:members,cpf',
+            'email' => 'email',
+            'telefone_fixo' => 'string|max:20',
+            'celular' => 'string|max:20',
+            'endereco' => 'string|max:100',
+            'cidade' => 'string|max:50',
+            'estado' => 'string|max:10',
+            'cep' =>'string|max:10',
+            'cargo' => 'string|max:20',
+            'departamentos' => 'string|max:50',
+            'cargo_admin' => 'string|max:50',
+            'data_membresia' => 'date',
+            'foto_perfil' => 'file|image:jpg,jpeg,png',
+        ],[
+            'name.required' => 'O nome é obrigatório',
+            'name.max' => 'O nome deveter no máximo 50 caracteres',
+            'cpf.required' => 'O CPF é obrigatório',
+            'cpf.unique' => 'O CPF deve ser único',
+            'email' => 'O email deve ser válido ex: example@email.com.br',
+
+        ]);
+
         $data = $request->all();
 
         $imagem_atual = $member->foto_perfil;
