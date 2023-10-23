@@ -5,6 +5,7 @@
     <div class="account-content">
         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
             <div class="row">
+                {{-- Informações Pessoais --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="general-info" class="section general-info">
                         <div class="info">
@@ -88,6 +89,7 @@
                 </div>
 
 
+                {{--  Informações Membresia --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="contact" class="section contact">
                         <div class="info">
@@ -96,7 +98,7 @@
                                 <div class="col-md-11 mx-auto">
                                     <div class="row">
                                         <div class="col-md-6">
-                                                <p class="font-weight-bold">Exerce alguma cargo na eclesiástico?</p>
+                                                <p class="font-weight-bold">Exerce alguma cargo Eclesiástico?</p>
                                                 <p>
                                                     @switch($member->cargo)
                                                     @case('presbitero')
@@ -160,6 +162,28 @@
                                             @endforeach
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold">Exerce alguma cargo Administrativo?</p>
+                                            <p>
+                                                @switch($member->cargo_admin)
+                                                @case('presidente')
+                                                    Pastor Presidente
+                                                    @break
+                                                @case('vice-presitente')
+                                                    Vice Presidente
+                                                    @break
+                                                @case('secretaria')
+                                                    Secretária
+                                                    @break
+                                                @case('tesoureiro')
+                                                    Tesoureiro
+                                                    @break
+                                                @default
+                                                    Não
+
+                                            @endswitch
+                                        </p>
+                                    </div>
                                         <div class="col-sm-6">
                                             <p class="font-weight-bold">Data de Membresia:</p>
                                             <p>{{ date('d/m/Y', strtotime($member->data_membresia))  }}</p>

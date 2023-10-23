@@ -199,6 +199,7 @@
                                             <div class="form-group">
                                                 <label for="cargo_admin">Exerce algum cargo administrativo?</label>
                                                 <select name="cargo_admin" class="form-control" id="country">
+                                                    <option selected>Não</option>
                                                     <option value="presidente" {{$member->cargo_admin == 'presidente'? 'selected' : ''}} >Pastor Presidente</option>
                                                     <option value="vice-presitente" {{$member->cargo_admin == 'vice-presitente'? 'selected' : ''}} >Vice-presidente</option>
                                                     <option value="secretaria" {{$member->cargo_admin == 'secretaria'? 'selected' : ''}} >Secretária</option>
