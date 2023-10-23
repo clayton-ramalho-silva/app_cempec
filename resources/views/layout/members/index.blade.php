@@ -6,8 +6,13 @@
 
     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing mt-2">
 
-        <div class="widget-content widget-content-area br-6 p-3">
+        <div class="widget-content widget-content-area br-6 p-3 d-flex justify-content-between align-items-center">
             <a href="{{ route('members.create') }}" class="btn btn-primary">Adcionar Membro</a>
+            <div class="d-flex align-items-center">
+                <h6 class="m-0">Total Membros:</h6>
+                <h5 class="m-0 ml-2 ">{{ $members->count()}}</h5>
+            </div>
+
         </div>
 
         <div class="widget-content widget-content-area br-6 mt-2">
