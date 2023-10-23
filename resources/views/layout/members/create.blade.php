@@ -8,6 +8,7 @@
     <div class="account-content">
         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
             <div class="row">
+                {{-- Informações Pessoais --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="general-info" class="section general-info">
                         <div class="info">
@@ -41,7 +42,7 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="cpf">CPF</label>
-                                                            <input name="cpf" type="text" class="form-control mb-4" id="cpf" placeholder="">
+                                                            <input name="cpf" type="text" class="form-control mb-4" id="cpf" placeholder="" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
@@ -121,7 +122,7 @@
                     </div>
                 </div>
 
-
+                {{-- Informações Membresia --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="contact" class="section contact">
                         <div class="info">
@@ -129,9 +130,10 @@
                             <div class="row">
                                 <div class="col-md-11 mx-auto">
                                     <div class="row">
+                                        {{-- Cargo Eclesiástico --}}
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="cargo">Exerce algum cargo?</label>
+                                                <label for="cargo">Exerce algum cargo eclesiástico?</label>
                                                 <select name="cargo" class="form-control" id="country">
                                                     <option selected>Cargo</option>
                                                     <option value="pastor">Pastor/Pastora</option>
@@ -145,6 +147,8 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        {{-- Ministério/Departamento --}}
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="departamento">Participa algum Ministério/Departamento?</label>
@@ -159,6 +163,22 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        {{-- Cargo Administrativo --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="cargo_admin">Exerce algum cargo administrativo?</label>
+                                                <select name="cargo_admin" class="form-control" id="country">
+                                                    <option selected>Cargo</option>
+                                                    <option value="presidente">Pastor Presidente</option>
+                                                    <option value="vice-presitente">Vice-presidente</option>
+                                                    <option value="secretaria">Secretária</option>
+                                                    <option value="tesoureiro">Tesoureiro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {{-- Data membresia --}}
                                         <div class="col-sm-6">
                                             <label class="dob-input">Data de Membresia</label>
                                             <div class="d-sm-flex d-block">
@@ -175,6 +195,7 @@
                     </div>
                 </div>
 
+                {{-- Salvar --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="contact" class="section contact">
                         <div class="info">

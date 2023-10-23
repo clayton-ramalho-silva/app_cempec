@@ -49,6 +49,7 @@ class MemberController extends Controller
        $member->cep = $request->cep;
        $member->cargo = $request->cargo;
        $member->departamentos = $request->departamentos;
+       $member->cargo_adm = $request->cargo_admin;
        $member->data_membresia = $request->data_membresia;
 
        // upload foto

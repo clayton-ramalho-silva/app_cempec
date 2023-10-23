@@ -9,6 +9,7 @@
     <div class="account-content">
         <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
             <div class="row">
+                {{-- Informações Pessoais --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="general-info" class="section general-info">
                         <div class="info">
@@ -42,7 +43,7 @@
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
                                                             <label for="cpf">CPF</label>
-                                                            <input name="cpf" type="text" class="form-control mb-4" id="cpf" value="{{ $member->cpf }}">
+                                                            <input name="cpf" type="text" class="form-control mb-4" id="cpf" value="{{ $member->cpf }}" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6">
@@ -123,6 +124,7 @@
                 </div>
 
 
+                {{-- Informações Membresia --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="contact" class="section contact">
                         <div class="info">
@@ -130,9 +132,10 @@
                             <div class="row">
                                 <div class="col-md-11 mx-auto">
                                     <div class="row">
+                                        {{-- Cargo eclesiastico --}}
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="cargo">Exerce algum cargo?</label>
+                                                <label for="cargo">Exerce algum cargo administrativo?</label>
                                                 <select name="cargo" class="form-control" id="country">
                                                     <option value="pastor" {{$member->cargo == 'pastor'? 'selected' : ''}} >Pastor/Pastora</option>
                                                     <option value="missionario" {{$member->cargo == 'missionario'? 'selected' : ''}} >Missionário/Missionária</option>
@@ -145,6 +148,8 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        {{-- Ministerio ou Departamento --}}
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="departamento">Participa algum Ministério/Departamento?</label>
@@ -188,6 +193,21 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        {{-- Cargo Administrativo --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="cargo_admin">Exerce algum cargo administrativo?</label>
+                                                <select name="cargo_admin" class="form-control" id="country">
+                                                    <option value="presidente" {{$member->cargo_admin == 'presidente'? 'selected' : ''}} >Pastor Presidente</option>
+                                                    <option value="vice-presitente" {{$member->cargo_admin == 'vice-presitente'? 'selected' : ''}} >Vice-presidente</option>
+                                                    <option value="secretaria" {{$member->cargo_admin == 'secretaria'? 'selected' : ''}} >Secretária</option>
+                                                    <option value="tesoureiro" {{$member->cargo_admin == 'tesoureiro'? 'selected' : ''}} >Tesoureiro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        {{-- Data membresia --}}
                                         <div class="col-sm-6">
                                             <label class="dob-input">Data de Membresia</label>
                                             <div class="d-sm-flex d-block">
@@ -204,6 +224,7 @@
                     </div>
                 </div>
 
+                {{-- Salvar --}}
                 <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                     <div id="contact" class="section contact">
                         <div class="info">
