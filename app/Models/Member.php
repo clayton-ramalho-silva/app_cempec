@@ -13,6 +13,7 @@ class Member extends Model
         'departamentos' => 'array'
     ];
 
+
     protected $guarded = [];
 
 

@@ -130,6 +130,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <p class="font-weight-bold">Participa de alguma Ministério/Departamento ?</p>
+
                                                 @foreach ($member->departamentos as $departamento)
 
                                                 @switch($departamento)
@@ -160,6 +161,8 @@
                                                 @endswitch
 
                                             @endforeach
+
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">

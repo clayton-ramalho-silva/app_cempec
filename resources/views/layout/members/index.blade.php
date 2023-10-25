@@ -61,6 +61,10 @@
                                 @endswitch
                             </td>
                             <td>
+                                @if (!$member->departamentos)
+                                    Não pertence a nenhum departamento
+                                @else
+
                                 @foreach ($member->departamentos as $departamento)
 
                                     @switch($departamento)
@@ -91,6 +95,7 @@
                                     @endswitch
 
                                 @endforeach
+                                @endif
                             </td>
                             <td>{{ date('d/m/Y', strtotime($member->data_nascimento)) }}</td>
                             <td>{{ date('d/m/Y', strtotime($member->data_membresia)) }}</td>

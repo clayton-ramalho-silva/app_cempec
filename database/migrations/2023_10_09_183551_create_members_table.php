@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('estado')->nullable();
             $table->string('cep')->nullable();
             $table->string('cargo', 50)->nullable();
+            $table->string('cargo_admin', 50)->nullable();
             $table->json('departamentos');
             $table->date('data_membresia')->nullable();
             $table->text('foto_perfil')->nullable();

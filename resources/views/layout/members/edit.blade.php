@@ -168,7 +168,7 @@
                                                 <select name="departamentos[]" class="form-control selectpicker" multiple>
 
 
-                                                    @foreach ($member->departamentos as $departamento )
+                                                    {{-- @foreach ($member->departamentos as $departamento )
                                                     <option value="{{ $departamento }}" {{ in_array($departamento, $member->departamentos) ? 'selected' : ''  }}>
                                                         @switch($departamento)
                                                         @case('colunas_da_fe')
@@ -192,14 +192,28 @@
                                                         @case('sacerdotes_do_senhor')
                                                             Sacerdotes do Senhor
                                                             @break
-                                                        @default
-                                                            Nenhum departamento
+                                                        @case('nao')
+                                                            Nenhum Departamento
+                                                        @break
 
                                                     @endswitch
 
                                                     </option>
 
-                                                   @endforeach
+                                                   @endforeach --}}
+
+                                                    {{-- teste --}}
+                                                    <option value="nao" {{ in_array('nao', $member->departamentos) ? 'selected' : '' }} >Escolha um Departamento ou Ministério</option>
+                                                    <option value="louvor" {{ in_array('louvor', $member->departamentos) ? 'selected' : '' }}>Ministério Louvor</option>
+                                                    <option value="sal_da_terra" {{ in_array('sal_da_terra', $member->departamentos) ? 'selected' : '' }}>Sal da Terra</option>
+                                                    <option value="luz_do_mundo" {{ in_array('luz_do_mundo', $member->departamentos) ? 'selected' : '' }}>Luz do Mundo</option>
+                                                    <option value="colunas_da_fe" {{ in_array('colunas_da_fe', $member->departamentos) ? 'selected' : '' }}>Colunas da Fé</option>
+                                                    <option value="intercessao" {{ in_array('intercessao', $member->departamentos) ? 'selected' : '' }}>Intercessão</option>
+                                                    <option value="jovens" {{ in_array('jovens', $member->departamentos) ? 'selected' : '' }}>Jovens</option>
+                                                    <option value="sacerdotes_do_senhor" {{ in_array('sacerdotes_do_senhor', $member->departamentos) ? 'selected' : '' }}>Sacerdotes do Senhor</option>
+
+
+
 
 
                                                 </select>

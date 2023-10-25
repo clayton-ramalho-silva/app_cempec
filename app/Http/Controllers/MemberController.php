@@ -36,30 +36,31 @@ class MemberController extends Controller
     {
 
 
-        $request->validate([
-            'name' => 'required|string|max:50',
-            'data_nascimento' => 'date',
-            'cpf' => 'required|string|unique:members,cpf',
-            'email' => 'email',
-            'telefone_fixo' => 'string|max:20',
-            'celular' => 'string|max:20',
-            'endereco' => 'string|max:100',
-            'cidade' => 'string|max:50',
-            'estado' => 'string|max:10',
-            'cep' =>'string|max:10',
-            'cargo' => 'string|max:20',
-            'departamentos' => 'string|max:50',
-            'cargo_admin' => 'string|max:50',
-            'data_membresia' => 'date',
-            'foto_perfil' => 'file|image:jpg,jpeg,png',
-        ],[
-            'name.required' => 'O nome é obrigatório',
-            'name.max' => 'O nome deveter no máximo 50 caracteres',
-            'cpf.required' => 'O CPF é obrigatório',
-            'cpf.unique' => 'O CPF deve ser único',
-            'email' => 'O email deve ser válido ex: example@email.com.br',
+        // $request->validate([
+        //     'name' => 'required|string|max:50',
+        //     'data_nascimento' => 'date',
+        //     'cpf' => 'required|string|unique:members,cpf',
+        //     'email' => 'email',
+        //     'telefone_fixo' => 'string|max:20',
+        //     'celular' => 'string|max:20',
+        //     'endereco' => 'string|max:100',
+        //     'cidade' => 'string|max:50',
+        //     'estado' => 'string|max:10',
+        //     'cep' =>'string|max:10',
+        //     'cargo' => 'string|max:20',
+        //     'departamentos' => 'string|max:50',
+        //     'cargo_admin' => 'string|max:50',
+        //     'data_membresia' => 'date',
+        //     // 'foto_perfil' => 'file|image:jpg,jpeg,png',
+        // ],[
+        //     'name.required' => 'O nome é obrigatório',
+        //     'name.max' => 'O nome deveter no máximo 50 caracteres',
+        //     'cpf.required' => 'O CPF é obrigatório',
+        //     'cpf.unique' => 'O CPF deve ser único',
+        //     'email' => 'O email deve ser válido ex: example@email.com.br',
 
-        ]);
+
+        // ]);
 
        $member = new Member;
 
@@ -121,7 +122,7 @@ class MemberController extends Controller
         $request->validate([
             'name' => 'required|string|max:50',
             'data_nascimento' => 'date',
-            'cpf' => 'required|string|unique:members,cpf',
+            'cpf' => 'required|string|unique:members,cpf,'.$member->id,
             'email' => 'email',
             'telefone_fixo' => 'string|max:20',
             'celular' => 'string|max:20',
@@ -130,10 +131,10 @@ class MemberController extends Controller
             'estado' => 'string|max:10',
             'cep' =>'string|max:10',
             'cargo' => 'string|max:20',
-            'departamentos' => 'string|max:50',
+            // 'departamentos' => 'string|max:50',
             'cargo_admin' => 'string|max:50',
             'data_membresia' => 'date',
-            'foto_perfil' => 'file|image:jpg,jpeg,png',
+            // 'foto_perfil' => 'file|image:jpg,jpeg,png',
         ],[
             'name.required' => 'O nome é obrigatório',
             'name.max' => 'O nome deveter no máximo 50 caracteres',
@@ -146,8 +147,6 @@ class MemberController extends Controller
         $data = $request->all();
 
         $imagem_atual = $member->foto_perfil;
-
-
 
         // upload foto
        if($request->hasFile('foto_perfil') && $request->file('foto_perfil')->isValid()){
@@ -176,6 +175,7 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
+        unlink(public_path('img/members/'.$member->foto_perfil));
         $member->delete();
 
         return redirect()->route('members.index');

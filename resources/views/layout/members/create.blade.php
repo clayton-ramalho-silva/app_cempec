@@ -38,7 +38,7 @@
                                                         <label class="dob-input">Data de Nascimento</label>
                                                         <div class="d-sm-flex d-block">
                                                             <div class="form-group mr-1">
-                                                                <input type="date" name="data_nascimento" id="" class="form-control" value="{{ old('date')}}">
+                                                                <input type="date" name="data_nascimento" id="" class="form-control" value="{{ old('data_nascimento')}}">
                                                                 @error('data_nascimento') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                             </div>
                                                         </div>
@@ -148,13 +148,13 @@
                                                 <label for="cargo">Exerce algum cargo eclesiástico?</label>
                                                 <select name="cargo" class="form-control" id="country">
                                                     <option selected>Cargo</option>
-                                                    <option value="pastor">Pastor/Pastora</option>
-                                                    <option value="missionario">Missionário/Missionária</option>
-                                                    <option value="presbitero">Presbítero</option>
-                                                    <option value="evengelista">Evangelista</option>
-                                                    <option value="diacono">Diácono/Diaconisa</option>
-                                                    <option value="obreiro">Obreiro/Obreira</option>
-                                                    <option value="membro">Membro</option>
+                                                    <option value="pastor" {{ old('cargo') == 'pastor' ? 'selected' : '' }} >Pastor/Pastora</option>
+                                                    <option value="missionario" {{ old('cargo') == 'missionario' ? 'selected' : '' }}>Missionário/Missionária</option>
+                                                    <option value="presbitero" {{ old('cargo') == 'presbitero' ? 'selected' : '' }}>Presbítero</option>
+                                                    <option value="evengelista" {{ old('cargo') == 'evengelista' ? 'selected' : '' }}>Evangelista</option>
+                                                    <option value="diacono" {{ old('cargo') == 'diacono' ? 'selected' : '' }}>Diácono/Diaconisa</option>
+                                                    <option value="obreiro" {{ old('cargo') == 'obreiro' ? 'selected' : '' }}>Obreiro/Obreira</option>
+                                                    <option value="membro" {{ old('cargo') == 'membro' ? 'selected' : '' }}>Membro</option>
 
                                                 </select>
                                                 @error('cargo') <div class="alert alert-danger">{{ $message }}</div> @enderror
@@ -166,8 +166,9 @@
                                             <div class="form-group">
                                                 <label for="departamento">Participa algum Ministério/Departamento?</label>
                                                 <select name="departamentos[]" class="form-control selectpicker" multiple>
+                                                    <option value="nao" selected>Escolha um Departamento ou Ministério</option>
                                                     <option value="louvor">Ministério Louvor</option>
-                                                    <option value="sal_da_terra">Sal da Terra</option>
+                                                    <option value="sal_da_terra" >Sal da Terra</option>
                                                     <option value="luz_do_mundo">Luz do Mundo</option>
                                                     <option value="colunas_da_fe">Colunas da Fé</option>
                                                     <option value="intercessao">Intercessão</option>
@@ -184,10 +185,10 @@
                                                 <label for="cargo_admin">Exerce algum cargo administrativo?</label>
                                                 <select name="cargo_admin" class="form-control" id="country">
                                                     <option selected>Cargo</option>
-                                                    <option value="presidente">Pastor Presidente</option>
-                                                    <option value="vice-presitente">Vice-presidente</option>
-                                                    <option value="secretaria">Secretária</option>
-                                                    <option value="tesoureiro">Tesoureiro</option>
+                                                    <option value="presidente" {{ old('cargo_admin') == 'presidente' ? 'selected' : '' }}>Pastor Presidente</option>
+                                                    <option value="vice-presitente" {{ old('cargo_admin') == 'vice-presitente' ? 'selected' : '' }}>Vice-presidente</option>
+                                                    <option value="secretaria" {{ old('cargo_admin') == 'secretaria' ? 'selected' : '' }}>Secretária</option>
+                                                    <option value="tesoureiro" {{ old('cargo_admin') == 'tesoureiro' ? 'selected' : '' }}>Tesoureiro</option>
                                                 </select>
                                                 @error('cargo_admin') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                             </div>
@@ -198,7 +199,7 @@
                                             <label class="dob-input">Data de Membresia</label>
                                             <div class="d-sm-flex d-block">
                                                 <div class="form-group mr-1">
-                                                    <input type="date" name="data_membresia" id="" class="form-control">
+                                                    <input type="date" name="data_membresia" id="" class="form-control" value="{{ old('data_membresia') }}">
                                                     @error('data_membresia') <div class="alert alert-danger">{{ $message }}</div> @enderror
                                                 </div>
                                             </div>
